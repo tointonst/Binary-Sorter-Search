@@ -28,6 +28,15 @@ public class Runner {
 			//dddd
 			
 		}
+		
+		public static void imputingArray()
+		{
+			do
+			{
+				Scanner 
+			}
+			while();
+		}
 
 	}
 
