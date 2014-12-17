@@ -7,6 +7,7 @@ public class Runner
 	{
 	public static boolean isNegOne = true;
 	public static ArrayList<Integer> array = new ArrayList();
+	
 
 
 	public static void main(String[] args)
@@ -65,23 +66,31 @@ public class Runner
 		
 		System.out.println("Target : Number " + target);
 		
+		int missCounter =0;
+		int corrCounter =0;
+		
 		int left = 0;
 		int right = array.size() - 1;
-
 		while (left <= right)
 			{
 			int middle = (left + right) / 2;
+			int counterPass = 1;
 			
+			System.out.println("");
+			System.out.println("Pass # " + counterPass);
+			counterPass++;
 			System.out.println("What is left?");
 			Scanner userInput = new Scanner(System.in);
 			int userleft = userInput.nextInt();	
 				if (userleft== left)
 				{
 				System.out.println("Correct");
+				corrCounter++;
 				}
 				else
 				{
 				System.out.println("Sorry the right answer is " + left);
+				missCounter++;
 				}
 				
 				System.out.println("What is right?");
@@ -90,10 +99,12 @@ public class Runner
 					if (userRight== right)
 					{
 					System.out.println("Correct");
+					corrCounter++;
 					}
 					else
 					{
 					System.out.println("Sorry the right answer is " + right);
+					missCounter++;
 					}
 					
 					System.out.println("What is the middle?");
@@ -102,10 +113,12 @@ public class Runner
 						if (userMiddle== middle)
 						{
 						System.out.println("Correct");
+						corrCounter++;
 						}
 						else
 						{
 						System.out.println("Sorry the right answer is " + middle);
+						missCounter++;
 						}
 						
 						System.out.println("What is the array[middle]?");
@@ -114,10 +127,12 @@ public class Runner
 							if (userArrayMid == array.get(middle))
 							{
 							System.out.println("Correct");
+							corrCounter++;
 							}
 							else
 							{
 							System.out.println("Sorry the right answer is " + array.get(middle));
+							missCounter++;
 							}
 			if (array.get(middle) == target)
 			{
@@ -132,12 +147,9 @@ public class Runner
 				{
 				left = middle + 1;
 
-				} 
-			
-			
-						
+				} 		
 			}
-
+		System.out.println("You got " + corrCounter + " right and " + missCounter + " wrong.");
 		}
 
 	}
