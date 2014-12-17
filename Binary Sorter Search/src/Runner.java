@@ -68,17 +68,17 @@ public class Runner
 		
 		int missCounter =0;
 		int corrCounter =0;
-		
+		int counterPass = 1;
 		int left = 0;
 		int right = array.size() - 1;
 		while (left <= right)
 			{
 			int middle = (left + right) / 2;
-			int counterPass = 1;
+			
 			
 			System.out.println("");
 			System.out.println("Pass # " + counterPass);
-			counterPass++;
+			
 			System.out.println("What is left?");
 			Scanner userInput = new Scanner(System.in);
 			int userleft = userInput.nextInt();	
@@ -147,9 +147,11 @@ public class Runner
 				{
 				left = middle + 1;
 
-				} 		
+				} 
+			counterPass++;
 			}
 		System.out.println("You got " + corrCounter + " right and " + missCounter + " wrong.");
+		
 		}
 
 	}
