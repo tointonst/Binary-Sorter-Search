@@ -25,6 +25,10 @@ public class Runner
 			Scanner userInput = new Scanner(System.in);
 			int userNumber = userInput.nextInt();
 			
+			//if (!userInput.hasNextInt())
+			//	{
+			//	System.out.println("Please inter a valid number");
+			//	}
 			if  (userNumber == -1)
 				{
 				isNegOne = false;
