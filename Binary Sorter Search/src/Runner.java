@@ -6,7 +6,7 @@ import java.util.Scanner;
 public class Runner
 	{
 	public static boolean isNegOne = true;
-	public static ArrayList<Integer> array = new ArrayList<>();
+	public static ArrayList<Integer> array = new ArrayList();
 
 
 	public static void main(String[] args)
@@ -51,7 +51,7 @@ public class Runner
 		System.out.print("Index  ");
 		for(int i =0; i<array.size(); i++)
 			{
-			System.out.print(counter + "  ");
+			System.out.print(counter + "\t");
 			counter++;
 			}
 		
@@ -60,8 +60,10 @@ public class Runner
 		Collections.sort(array);
 		for(int i =0; i<array.size(); i++)
 			{
-			System.out.print(array.get(i) + "  ");
+			System.out.print(array.get(i) + "\t");
 			}
+		
+		System.out.println("Target : Number " + target);
 		
 		int left = 0;
 		int right = array.size() - 1;
@@ -69,6 +71,58 @@ public class Runner
 		while (left <= right)
 			{
 			int middle = (left + right) / 2;
+			
+			System.out.println("What is left?");
+			Scanner userInput = new Scanner(System.in);
+			int userleft = userInput.nextInt();	
+				if (userleft== left)
+				{
+				System.out.println("Correct");
+				}
+				else
+				{
+				System.out.println("Sorry the right answer is " + left);
+				}
+				
+				System.out.println("What is right?");
+				Scanner userInput2 = new Scanner(System.in);
+				int userRight = userInput2.nextInt();	
+					if (userRight== right)
+					{
+					System.out.println("Correct");
+					}
+					else
+					{
+					System.out.println("Sorry the right answer is " + right);
+					}
+					
+					System.out.println("What is the middle?");
+					Scanner userInput3 = new Scanner(System.in);
+					int userMiddle = userInput3.nextInt();	
+						if (userMiddle== middle)
+						{
+						System.out.println("Correct");
+						}
+						else
+						{
+						System.out.println("Sorry the right answer is " + middle);
+						}
+						
+						System.out.println("What is the array[middle]?");
+						Scanner userInput4 = new Scanner(System.in);
+						int userArrayMid = userInput4.nextInt();	
+							if (userArrayMid == array.get(middle))
+							{
+							System.out.println("Correct");
+							}
+							else
+							{
+							System.out.println("Sorry the right answer is " + array.get(middle));
+							}
+			if (array.get(middle) == target)
+			{
+				break;
+			}
 			if (target < array.get(middle))
 				{
 				right = middle - 1;
@@ -76,17 +130,16 @@ public class Runner
 				}
 			if (target > array.get(middle))
 				{
-				right = middle + 1;
+				left = middle + 1;
 
 				} 
-			else
-				{
-				 //middle;
-				}
-
 			
+			
+						
 			}
 
 		}
 
 	}
+
+	
